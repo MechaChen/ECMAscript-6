@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Examples</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //===1 匿名函數
+      var getArea = function(radius) {
+        return radius * radius * 3.14;
+      };
+      document.write("<p>半徑1的圓面積 : ", getArea(1), "</p>");
+
+      //===2 可以改寫成箭頭函數
+      //省略function關鍵字, 改用箭頭指向所需執行的敍述區塊
+      var getArea2 = radius => {
+        return radius * radius * 3.14;
+      };
+      document.write("<p>半徑10的圓面積 : ", getArea2(10), "</p>");
+
+      //===3 箭頭函數的簡略寫法
+      //若只要執行一行敍述，且該敍述的目的是回傳一個值，
+      //則{}和return可以省略
+      var getArea3 = radius => radius * radius * 3.14;
+      document.write("<p>半徑100的圓面積 : ", getArea3(100), "</p>");
+
+      //===4 箭頭函數的簡略寫法
+      //參數列若只有一個參數，則左邊的()可以省略
+      var sayHello = msg => document.write(msg, "<br>");
+
+      sayHello("Hello...");
+      document.write(sayHello("Hi..."), "<br>");
+
+      //===5 箭頭函數的簡略寫法
+      //若没有參數，則左邊的()不可以省略
+
+      //搭配預設參數,....
+      var sayHello = (msg = "Hello!") => document.write(msg, "<br>");
+      sayHello();
+      sayHello("^__________^");
+    </script>
+
+    <h2>array.map()</h2>
+    <script type="text/javascript">
+      var arr = [10, 20, 30];
+      function double(data) {
+        return data * 2;
+      }
+      var arr2 = arr.map(double);
+      document.write("arr2 : ", arr2, "<br>");
+    </script>
+
+    <h2>array.map()...使用anonymous的寫法</h2>
+    <script type="text/javascript">
+      var arr = [10, 20, 30];
+
+      var arr2 = arr.map(function(data) {
+        return data * 2;
+      });
+      document.write("arr2 : ", arr2, "<br>");
+    </script>
+
+    <h2>array.map()...使用arrow function 的寫法</h2>
+    <script type="text/javascript">
+      var arr = [10, 20, 30];
+
+      var arr2 = arr.map(data => {
+        return data * 2;
+      });
+      document.write("arr2 : ", arr2, "<br>");
+    </script>
+
+    <h2>array.map()...使用arrow function 的寫法</h2>
+    <script type="text/javascript">
+      var arr = [10, 20, 30];
+
+      var arr2 = arr.map(data => data * 2);
+      document.write("arr2 : ", arr2, "<br>");
+    </script>
+
+    <h2>array.filter()===自己做</h2>
+    <script type="text/javascript">
+      var prices = [38, 100, 56, 123, 23];
+      var under100 = [];
+      for (var i = 0; i < prices.length; i++) {
+        if (prices[i] < 100) {
+          under100.push(prices[i]);
+        }
+      }
+      document.write(under100, "<br>");
+    </script>
+
+    <h2>array.filter()</h2>
+    <script type="text/javascript">
+      var prices = [38, 100, 56, 123, 23];
+      var under100 = prices.filter(function(data) {
+        return data < 100;
+      }); //[38, 56, 23]
+      document.write(under100, "<br>");
+    </script>
+
+    <h2>array.filter() 使用 箭頭函式</h2>
+    <script type="text/javascript">
+      var prices = [38, 100, 56, 123, 23];
+      var under100 = prices.filter(data => data < 100); //[38, 56, 23]
+      document.write(under100, "<br>");
+    </script>
+
+    <h2>array.filter() 使用 箭頭函式</h2>
+    <script type="text/javascript">
+      var arr = [10, 20, 30];
+      arr.forEach(function(data) {
+        var colorArray = ["red", "orange", "green", "purple", "blue"];
+        var i = Math.floor(Math.random() * 6);
+        document.write(
+          `<span style='color:${colorArray[i]}'>${data}</span><br>`
+        );
+      });
+    </script>
+  </body>
+</html>

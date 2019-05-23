@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 下面的 var a 會先被偵測到有宣告
+      document.write("a: ", a, "<br>");
+
+      var a = 10;
+
+      //  a 可以重複宣告
+      document.write("a: ", a, "<br>");
+      var a = 100;
+
+      // var 沒有區塊效果
+      for (var i = 0; i <= 10; i++) {
+        document.write("i:", i, "<br>");
+      }
+      document.write("i:", i, "<br>");
+
+      //   let 有區塊效果
+      for (let j = 0; j <= 10; j++) {
+        document.write("j:", j, "<br>");
+      }
+      //   document.write("j:", j, "<br>");  => fail
+
+      //   let vs var 的區域性問題
+      {
+        let word = "Hi~";
+        var aWord = "Hello";
+        document.write("word: ", word, "<br>");
+      }
+      //   document.write("word: ", word, "<br>");
+      document.write("aWord: ", aWord, "<br>");
+    </script>
+  </body>
+</html>

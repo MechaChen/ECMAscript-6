@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Examples</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      span {
+        display: inline-block;
+        padding: 0 5px;
+        color: #f66;
+        font-weight: 900;
+      }
+      h2 {
+        color: indigo;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //===1 匿名函數
+      var getArea = function(radius) {
+        return radius * radius * 3.14;
+      };
+      document.write("<p>半徑<span>10</span>的圓面積 : ", getArea(1), "</p>");
+
+      //===2 可以改寫成箭頭函數
+      //省略function關鍵字, 改用箭頭指向所需執行的敍述區塊
+      var getArea = radius => {
+        return radius * radius * 3.14;
+      };
+      document.write("<p>半徑<span>10</span>的圓面積 : ", getArea(10), "</p>");
+
+      //===3 箭頭函數的簡略寫法
+      //若只要執行一行敍述，且該敍述的目的是回傳一個值，
+      //則{}和return可以省略
+      var getArea = radius => radius * radius * 3.14;
+      document.write("<p>半徑<span>10</span>的圓面積 : ", getArea(10), "</p>");
+
+      //===4 箭頭函數的簡略寫法
+      //參數列若只有一個參數，則左邊的()可以省略
+      var getArea = radius => radius * radius * 3.14;
+      document.write("<p>半徑<span>10</span>的圓面積 : ", getArea(10), "</p>");
+
+      //===5 箭頭函數的簡略寫法
+      //若没有參數，則左邊的()不可以省略
+      var sayHello = () => document.write("sayHello");
+      sayHello();
+
+      //搭配預設參數
+      var getArea = (radius = 20) => radius * radius * 3.14;
+      document.write("<p>半徑圓<span>20</span>的圓面積：", getArea(), "</p>");
+
+      //array.map()
+      document.write("<h2>Array.map()</h2>");
+      var arr = [10, 20, 30];
+      function double(data) {
+        return data * 2;
+      }
+      var arr2 = arr.map(double);
+      document.write(arr2, "<br>");
+
+      //array.map() with anynomous function
+      document.write("<h2>Array.map() with Anynomous Function</h2>");
+      var arr = [10, 20, 30];
+      var arr2 = arr.map(function(data) {
+        return data * 2;
+      });
+      document.write(arr2, "<br>");
+
+      //   array.map() with arrow function
+      document.write("<h2>Array.map() with Arrow Function</h2>");
+      var arr = [10, 20, 30];
+      var arr2 = arr.map(data => data * 2);
+      document.write(arr2, "<br>");
+    </script>
+  </body>
+</html>

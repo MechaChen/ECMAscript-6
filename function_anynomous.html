@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      h1 {
+        color: indigo;
+      }
+      h2 {
+        color: indianred;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Function Statement -->
+    <h1>Function Statement</h1>
+    <script>
+      sayHello();
+      function sayHello() {
+        document.write("Hello~");
+      }
+    </script>
+
+    <!-- Function Expression -->
+    <h1>Function Expression</h1>
+    <script>
+      greeting();
+      var greeting = function() {
+        document.write("greeting");
+      };
+    </script>
+
+    <!-- IIEF : Imdiately Invoke Function Expression -->
+    <h1>IIEF</h1>
+    <script>
+      // without parameter
+      document.write("<h2>Without Parameter</h2>");
+      var total = 1000;
+      (function() {
+        var total = 1;
+        document.write("total: ", total, "<br>");
+      })();
+      document.write("total: ", total, "<br>");
+
+      //   with parameter
+      document.write("<h2>With Parameter</h2>");
+      var total = 1000;
+      (function(msg) {
+        var total = 1;
+        document.write("total: ", total, "<br>");
+        document.write(msg, " ...", "<br>");
+      })("^_______^");
+      document.write("total: ", total, "<br>");
+    </script>
+  </body>
+</html>
